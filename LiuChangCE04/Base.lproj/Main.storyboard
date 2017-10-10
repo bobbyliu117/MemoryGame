@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LiuChangCE04" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xV7-Hh-tl2">
+                                <rect key="frame" x="166.5" y="255.5" width="334" height="29.5"/>
+                                <color key="backgroundColor" red="1" green="0.40500047839999997" blue="0.2709100391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2sT-OP-lLG" kind="show" id="dT5-4f-do6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xV7-Hh-tl2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BLc-qC-c83"/>
+                            <constraint firstItem="xV7-Hh-tl2" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.08" id="I2H-Cw-bxG"/>
+                            <constraint firstItem="xV7-Hh-tl2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="UhI-Cn-ULF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xV7-Hh-tl2" secondAttribute="bottom" constant="90" id="YS0-e1-8dr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="30" y="117"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="eEL-Xm-ZJx">
+            <objects>
+                <viewController id="2sT-OP-lLG" customClass="GameViewController" customModule="LiuChangCE04" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LDE-N7-rq7">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nID-Ar-GbG" userLabel="CenterButton" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="253.5" y="130" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nID-Ar-GbG" secondAttribute="height" multiplier="1:1" id="CDT-rR-oP0"/>
+                                    <constraint firstAttribute="width" constant="75" id="Zgc-lS-rYS"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFe-1z-g5L" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="168.5" y="-40.5" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhw-rQ-Ys0" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="253.5" y="-40.5" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf1-QL-Mdn" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="338.5" y="-40.5" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBj-o9-C3v" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="423.5" y="-40.5" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2V-6m-STS" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="168.5" y="44.5" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg9-YV-RVD" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="253.5" y="44.5" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRS-l4-OmF" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="338.5" y="44.5" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppQ-4G-VEq" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="423.5" y="44.5" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmP-W0-r6J" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="168.5" y="130" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7l-Qb-gLh" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="338.5" y="130" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIE-5b-agh" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="423.5" y="130" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebs-V9-Ra3" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="168.5" y="215.5" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0O-m9-Z0L" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="253.5" y="215.5" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsj-aX-Xoc" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="338.5" y="215.5" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIG-7m-GU8" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="423.5" y="215.5" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LX2-Ch-cO0" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="168.5" y="300.5" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAU-Cf-oAt" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="253.5" y="300.5" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="962-tv-1iV" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="338.5" y="300.5" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfV-Kq-pcT" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                                <rect key="frame" x="423.5" y="300.5" width="75" height="75"/>
+                                <state key="normal" title="Button" image="card_back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cp5-xn-a66" userLabel="Quit">
+                                <rect key="frame" x="167" y="325" width="333.5" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.40500047839999997" blue="0.2709100391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Quit">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Adh-79-6sO">
+                                <rect key="frame" x="25" y="15" width="57" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jmP-W0-r6J" firstAttribute="height" secondItem="nID-Ar-GbG" secondAttribute="height" id="0b1-AJ-6fA"/>
+                            <constraint firstItem="pIE-5b-agh" firstAttribute="height" secondItem="a7l-Qb-gLh" secondAttribute="height" id="0gj-pM-4jI"/>
+                            <constraint firstItem="LX2-Ch-cO0" firstAttribute="top" secondItem="Ebs-V9-Ra3" secondAttribute="bottom" constant="10" id="1RS-E0-hbj"/>
+                            <constraint firstItem="962-tv-1iV" firstAttribute="centerX" secondItem="xsj-aX-Xoc" secondAttribute="centerX" id="1Rx-eB-QmL"/>
+                            <constraint firstItem="Uhw-rQ-Ys0" firstAttribute="width" secondItem="dg9-YV-RVD" secondAttribute="width" id="2z5-by-Nba"/>
+                            <constraint firstItem="nFe-1z-g5L" firstAttribute="centerX" secondItem="k2V-6m-STS" secondAttribute="centerX" id="3Dk-qW-sgk"/>
+                            <constraint firstItem="cp5-xn-a66" firstAttribute="height" secondItem="LDE-N7-rq7" secondAttribute="height" multiplier="0.08" id="4On-pP-rQ7"/>
+                            <constraint firstItem="pIE-5b-agh" firstAttribute="top" secondItem="ppQ-4G-VEq" secondAttribute="bottom" constant="10" id="5t0-cw-W7b"/>
+                            <constraint firstItem="yRS-l4-OmF" firstAttribute="height" secondItem="a7l-Qb-gLh" secondAttribute="height" id="7P3-xe-fdk"/>
+                            <constraint firstItem="Uhw-rQ-Ys0" firstAttribute="centerX" secondItem="dg9-YV-RVD" secondAttribute="centerX" id="7aF-Oj-D1v"/>
+                            <constraint firstItem="k2V-6m-STS" firstAttribute="centerX" secondItem="jmP-W0-r6J" secondAttribute="centerX" id="7fd-Zo-7qn"/>
+                            <constraint firstItem="yRS-l4-OmF" firstAttribute="width" secondItem="a7l-Qb-gLh" secondAttribute="width" id="8ey-iS-t6Y"/>
+                            <constraint firstItem="xsj-aX-Xoc" firstAttribute="height" secondItem="a7l-Qb-gLh" secondAttribute="height" id="9S3-QO-OAt"/>
+                            <constraint firstItem="Ebs-V9-Ra3" firstAttribute="height" secondItem="jmP-W0-r6J" secondAttribute="height" id="9nd-qS-85Q"/>
+                            <constraint firstItem="yRS-l4-OmF" firstAttribute="top" secondItem="Hf1-QL-Mdn" secondAttribute="bottom" constant="10" id="ApK-Gc-zsv"/>
+                            <constraint firstItem="nID-Ar-GbG" firstAttribute="leading" secondItem="jmP-W0-r6J" secondAttribute="trailing" constant="10" id="BaP-Cl-BJx"/>
+                            <constraint firstItem="jAU-Cf-oAt" firstAttribute="top" secondItem="j0O-m9-Z0L" secondAttribute="bottom" constant="10" id="C4z-4X-YKQ"/>
+                            <constraint firstItem="rBj-o9-C3v" firstAttribute="centerX" secondItem="ppQ-4G-VEq" secondAttribute="centerX" id="Dm3-gp-1ZI"/>
+                            <constraint firstItem="Hf1-QL-Mdn" firstAttribute="width" secondItem="yRS-l4-OmF" secondAttribute="width" id="F6N-rI-425"/>
+                            <constraint firstItem="cp5-xn-a66" firstAttribute="centerX" secondItem="YdE-iu-I8i" secondAttribute="centerX" id="HNO-St-u6o"/>
+                            <constraint firstItem="jmP-W0-r6J" firstAttribute="width" secondItem="nID-Ar-GbG" secondAttribute="width" id="HsN-bF-AFI"/>
+                            <constraint firstItem="rBj-o9-C3v" firstAttribute="width" secondItem="ppQ-4G-VEq" secondAttribute="width" id="HuQ-pM-Wax"/>
+                            <constraint firstItem="nID-Ar-GbG" firstAttribute="centerX" secondItem="YdE-iu-I8i" secondAttribute="centerX" constant="-42.5" id="IHl-3c-Bah"/>
+                            <constraint firstItem="k2V-6m-STS" firstAttribute="height" secondItem="jmP-W0-r6J" secondAttribute="height" id="IRG-j5-aKK"/>
+                            <constraint firstItem="pIE-5b-agh" firstAttribute="width" secondItem="a7l-Qb-gLh" secondAttribute="width" id="JPj-Wc-tgT"/>
+                            <constraint firstItem="Ebs-V9-Ra3" firstAttribute="top" secondItem="jmP-W0-r6J" secondAttribute="bottom" constant="10" id="KCa-my-mmk"/>
+                            <constraint firstItem="dIG-7m-GU8" firstAttribute="height" secondItem="pIE-5b-agh" secondAttribute="height" id="L6w-Oa-6yg"/>
+                            <constraint firstItem="j0O-m9-Z0L" firstAttribute="height" secondItem="nID-Ar-GbG" secondAttribute="height" id="Lq8-LG-P3p"/>
+                            <constraint firstItem="ppQ-4G-VEq" firstAttribute="centerX" secondItem="pIE-5b-agh" secondAttribute="centerX" id="NDq-k1-YZd"/>
+                            <constraint firstItem="j0O-m9-Z0L" firstAttribute="top" secondItem="nID-Ar-GbG" secondAttribute="bottom" constant="10" id="NL6-1X-sUE"/>
+                            <constraint firstItem="xsj-aX-Xoc" firstAttribute="top" secondItem="a7l-Qb-gLh" secondAttribute="bottom" constant="10" id="PVa-nz-Np4"/>
+                            <constraint firstItem="ppQ-4G-VEq" firstAttribute="top" secondItem="rBj-o9-C3v" secondAttribute="bottom" constant="10" id="QZV-J2-aAg"/>
+                            <constraint firstItem="LX2-Ch-cO0" firstAttribute="height" secondItem="Ebs-V9-Ra3" secondAttribute="height" id="R3g-rN-aWs"/>
+                            <constraint firstItem="jAU-Cf-oAt" firstAttribute="centerX" secondItem="j0O-m9-Z0L" secondAttribute="centerX" id="RSH-Dk-rS0"/>
+                            <constraint firstItem="nFe-1z-g5L" firstAttribute="height" secondItem="k2V-6m-STS" secondAttribute="height" id="Rbl-4b-ap9"/>
+                            <constraint firstItem="Uhw-rQ-Ys0" firstAttribute="height" secondItem="dg9-YV-RVD" secondAttribute="height" id="Sak-25-cvi"/>
+                            <constraint firstItem="nFe-1z-g5L" firstAttribute="width" secondItem="k2V-6m-STS" secondAttribute="width" id="UAF-tL-kKL"/>
+                            <constraint firstItem="rBj-o9-C3v" firstAttribute="height" secondItem="ppQ-4G-VEq" secondAttribute="height" id="UPb-sB-51E"/>
+                            <constraint firstItem="Adh-79-6sO" firstAttribute="top" secondItem="YdE-iu-I8i" secondAttribute="top" constant="15" id="Uu8-4Q-uW3"/>
+                            <constraint firstItem="Hf1-QL-Mdn" firstAttribute="centerX" secondItem="yRS-l4-OmF" secondAttribute="centerX" id="VRa-nB-0c3"/>
+                            <constraint firstItem="k2V-6m-STS" firstAttribute="top" secondItem="nFe-1z-g5L" secondAttribute="bottom" constant="10" id="WA7-xn-pZm"/>
+                            <constraint firstItem="cfV-Kq-pcT" firstAttribute="width" secondItem="dIG-7m-GU8" secondAttribute="width" id="Wdj-y2-fzL"/>
+                            <constraint firstItem="a7l-Qb-gLh" firstAttribute="leading" secondItem="nID-Ar-GbG" secondAttribute="trailing" constant="10" id="Wnx-Pv-vYL"/>
+                            <constraint firstItem="jmP-W0-r6J" firstAttribute="centerY" secondItem="nID-Ar-GbG" secondAttribute="centerY" id="ZgY-30-Tnj"/>
+                            <constraint firstItem="dIG-7m-GU8" firstAttribute="centerX" secondItem="pIE-5b-agh" secondAttribute="centerX" id="bFJ-v6-6E0"/>
+                            <constraint firstItem="xsj-aX-Xoc" firstAttribute="width" secondItem="a7l-Qb-gLh" secondAttribute="width" id="cWR-g7-kqn"/>
+                            <constraint firstItem="k2V-6m-STS" firstAttribute="width" secondItem="jmP-W0-r6J" secondAttribute="width" id="deP-7a-8dn"/>
+                            <constraint firstItem="pIE-5b-agh" firstAttribute="centerY" secondItem="a7l-Qb-gLh" secondAttribute="centerY" id="dwb-l9-wjk"/>
+                            <constraint firstItem="j0O-m9-Z0L" firstAttribute="centerX" secondItem="nID-Ar-GbG" secondAttribute="centerX" id="f3d-yn-Lte"/>
+                            <constraint firstItem="dg9-YV-RVD" firstAttribute="width" secondItem="nID-Ar-GbG" secondAttribute="width" id="fMJ-FJ-jYl"/>
+                            <constraint firstItem="cp5-xn-a66" firstAttribute="width" secondItem="LDE-N7-rq7" secondAttribute="width" multiplier="0.5" id="g9u-Po-PLT"/>
+                            <constraint firstItem="962-tv-1iV" firstAttribute="top" secondItem="xsj-aX-Xoc" secondAttribute="bottom" constant="10" id="gcc-PI-EaM"/>
+                            <constraint firstItem="xsj-aX-Xoc" firstAttribute="centerX" secondItem="a7l-Qb-gLh" secondAttribute="centerX" id="gz9-oH-4jM"/>
+                            <constraint firstItem="jAU-Cf-oAt" firstAttribute="width" secondItem="j0O-m9-Z0L" secondAttribute="width" id="h0g-1e-2zD"/>
+                            <constraint firstItem="a7l-Qb-gLh" firstAttribute="width" secondItem="nID-Ar-GbG" secondAttribute="width" id="hiW-mU-ON5"/>
+                            <constraint firstItem="yRS-l4-OmF" firstAttribute="centerX" secondItem="a7l-Qb-gLh" secondAttribute="centerX" id="iCr-0j-Mba"/>
+                            <constraint firstItem="pIE-5b-agh" firstAttribute="leading" secondItem="a7l-Qb-gLh" secondAttribute="trailing" constant="10" id="iWA-Hs-q1V"/>
+                            <constraint firstItem="962-tv-1iV" firstAttribute="width" secondItem="xsj-aX-Xoc" secondAttribute="width" id="jOC-m7-gHb"/>
+                            <constraint firstItem="nID-Ar-GbG" firstAttribute="centerY" secondItem="YdE-iu-I8i" secondAttribute="centerY" constant="-20" id="jkb-hq-ZQ4"/>
+                            <constraint firstItem="dIG-7m-GU8" firstAttribute="top" secondItem="pIE-5b-agh" secondAttribute="bottom" constant="10" id="joQ-gk-rfb"/>
+                            <constraint firstItem="Adh-79-6sO" firstAttribute="leading" secondItem="YdE-iu-I8i" secondAttribute="leading" constant="25" id="lgg-Js-WHN"/>
+                            <constraint firstItem="a7l-Qb-gLh" firstAttribute="top" secondItem="yRS-l4-OmF" secondAttribute="bottom" constant="10" id="mpF-aI-1jo"/>
+                            <constraint firstItem="ppQ-4G-VEq" firstAttribute="width" secondItem="pIE-5b-agh" secondAttribute="width" id="nWk-vT-Xyc"/>
+                            <constraint firstItem="YdE-iu-I8i" firstAttribute="bottom" secondItem="cp5-xn-a66" secondAttribute="bottom" constant="20" id="nv0-i9-55M"/>
+                            <constraint firstItem="nID-Ar-GbG" firstAttribute="top" secondItem="dg9-YV-RVD" secondAttribute="bottom" constant="10" id="oVh-vb-eze"/>
+                            <constraint firstItem="jmP-W0-r6J" firstAttribute="top" secondItem="k2V-6m-STS" secondAttribute="bottom" constant="10" id="p2C-Pj-GlX"/>
+                            <constraint firstItem="cfV-Kq-pcT" firstAttribute="top" secondItem="dIG-7m-GU8" secondAttribute="bottom" constant="10" id="pEH-bt-hhC"/>
+                            <constraint firstItem="ppQ-4G-VEq" firstAttribute="height" secondItem="pIE-5b-agh" secondAttribute="height" id="pgk-jE-mni"/>
+                            <constraint firstItem="dIG-7m-GU8" firstAttribute="width" secondItem="pIE-5b-agh" secondAttribute="width" id="qfN-hT-Tc1"/>
+                            <constraint firstItem="dg9-YV-RVD" firstAttribute="top" secondItem="Uhw-rQ-Ys0" secondAttribute="bottom" constant="10" id="r9H-W5-ZEK"/>
+                            <constraint firstItem="LX2-Ch-cO0" firstAttribute="centerX" secondItem="Ebs-V9-Ra3" secondAttribute="centerX" id="rWe-tW-EGV"/>
+                            <constraint firstItem="Ebs-V9-Ra3" firstAttribute="width" secondItem="jmP-W0-r6J" secondAttribute="width" id="s4S-bT-3cf"/>
+                            <constraint firstItem="cfV-Kq-pcT" firstAttribute="height" secondItem="dIG-7m-GU8" secondAttribute="height" id="sTa-uA-h63"/>
+                            <constraint firstItem="Ebs-V9-Ra3" firstAttribute="centerX" secondItem="jmP-W0-r6J" secondAttribute="centerX" id="tXi-Kl-oyC"/>
+                            <constraint firstItem="cfV-Kq-pcT" firstAttribute="centerX" secondItem="dIG-7m-GU8" secondAttribute="centerX" id="tsh-Tj-OaJ"/>
+                            <constraint firstItem="dg9-YV-RVD" firstAttribute="height" secondItem="nID-Ar-GbG" secondAttribute="height" id="u0R-Nu-pfj"/>
+                            <constraint firstItem="962-tv-1iV" firstAttribute="height" secondItem="xsj-aX-Xoc" secondAttribute="height" id="u1t-Au-zTy"/>
+                            <constraint firstItem="j0O-m9-Z0L" firstAttribute="width" secondItem="nID-Ar-GbG" secondAttribute="width" id="uyG-wV-dRD"/>
+                            <constraint firstItem="a7l-Qb-gLh" firstAttribute="height" secondItem="nID-Ar-GbG" secondAttribute="height" id="vA7-KC-K8G"/>
+                            <constraint firstItem="Hf1-QL-Mdn" firstAttribute="height" secondItem="yRS-l4-OmF" secondAttribute="height" id="vmz-b1-pFL"/>
+                            <constraint firstItem="a7l-Qb-gLh" firstAttribute="centerY" secondItem="nID-Ar-GbG" secondAttribute="centerY" id="x9S-Kk-UMH"/>
+                            <constraint firstItem="dg9-YV-RVD" firstAttribute="centerX" secondItem="nID-Ar-GbG" secondAttribute="centerX" id="xUd-bb-Fct"/>
+                            <constraint firstItem="LX2-Ch-cO0" firstAttribute="width" secondItem="Ebs-V9-Ra3" secondAttribute="width" id="yiV-km-QCu"/>
+                            <constraint firstItem="jAU-Cf-oAt" firstAttribute="height" secondItem="j0O-m9-Z0L" secondAttribute="height" id="zus-Zr-rok"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YdE-iu-I8i"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nUK-sh-xfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873" y="118"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="card_back" width="128" height="128"/>
+    </resources>
+</document>
