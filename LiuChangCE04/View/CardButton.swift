@@ -2,6 +2,7 @@
 
 import UIKit
 
+// delegate
 protocol CardButtonDelegate {
     // to setup a name game
     func shuffle()
@@ -23,6 +24,11 @@ class CardButton: UIButton {
     var isFlipped = false
     var imageString: String!
     var delegate: CardButtonDelegate!
+    
+    // computed properties
+    var image: UIImage {
+        return UIImage(named: imageString)!
+    }
     
     // initializer
     override init(frame: CGRect) {
@@ -66,7 +72,7 @@ class CardButton: UIButton {
                     CardButton.numberOfMatches += 1
                     CardButton.firstFlippedCard = nil
                     // check if win
-                    if CardButton.numberOfMatches == 3 {
+                    if CardButton.numberOfMatches == totalPairs {
                         delegate.screen()
                         perform(#selector(gameEnd), with: self, afterDelay: 1)
                         
@@ -106,11 +112,10 @@ class CardButton: UIButton {
         }
     }
     
-    // TODO: Show Play Button and prompt
+    // Show Play Button and prompt
     @objc func gameEnd() {
         
         // present alert
-        print("YOU WIN!")
         delegate.dismiss()
         
     }
@@ -125,6 +130,7 @@ class CardButton: UIButton {
     
     // remove card with pulsing animation
     @objc func pulse() {
+        // core animation to scale
         let animation = CABasicAnimation(keyPath: "transform.scale")
         animation.duration = 0.7
         animation.repeatCount = 1
@@ -133,12 +139,13 @@ class CardButton: UIButton {
         animation.toValue = 0.1
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         
-        
         UIView.animateKeyframes(withDuration: 0.7, delay: 0, options: [], animations: {
+            // frame 1: scale
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.9, animations: {
                 self.layer.add(animation, forKey: nil)
             })
             
+            // frame 2: remove
             UIView.addKeyframe(withRelativeStartTime: 0.9, relativeDuration: 0.1, animations: {
                 self.alpha = 0
             })
