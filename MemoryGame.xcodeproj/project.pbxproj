@@ -14,10 +14,11 @@
 		B076158F1F8D55B000EECD35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B076158D1F8D55B000EECD35 /* LaunchScreen.storyboard */; };
 		B07615981F8D595D00EECD35 /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07615971F8D595D00EECD35 /* CardButton.swift */; };
 		B076159B1F8D64E600EECD35 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076159A1F8D64E600EECD35 /* GameViewController.swift */; };
+		B076159E1F9131E000EECD35 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076159D1F9131E000EECD35 /* Record.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B07615811F8D55B000EECD35 /* LiuChangCE04.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiuChangCE04.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B07615811F8D55B000EECD35 /* MemoryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B07615841F8D55B000EECD35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B07615861F8D55B000EECD35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B07615891F8D55B000EECD35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -26,6 +27,7 @@
 		B07615901F8D55B000EECD35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B07615971F8D595D00EECD35 /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
 		B076159A1F8D64E600EECD35 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		B076159D1F9131E000EECD35 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +44,7 @@
 		B07615781F8D55B000EECD35 = {
 			isa = PBXGroup;
 			children = (
-				B07615831F8D55B000EECD35 /* LiuChangCE04 */,
+				B07615831F8D55B000EECD35 /* MemoryGame */,
 				B07615821F8D55B000EECD35 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,14 +52,15 @@
 		B07615821F8D55B000EECD35 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B07615811F8D55B000EECD35 /* LiuChangCE04.app */,
+				B07615811F8D55B000EECD35 /* MemoryGame.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B07615831F8D55B000EECD35 /* LiuChangCE04 */ = {
+		B07615831F8D55B000EECD35 /* MemoryGame */ = {
 			isa = PBXGroup;
 			children = (
+				B076159C1F9131BB00EECD35 /* Model */,
 				B07615991F8D64CB00EECD35 /* Controller */,
 				B07615961F8D593A00EECD35 /* View */,
 				B07615841F8D55B000EECD35 /* AppDelegate.swift */,
@@ -66,7 +69,7 @@
 				B076158D1F8D55B000EECD35 /* LaunchScreen.storyboard */,
 				B07615901F8D55B000EECD35 /* Info.plist */,
 			);
-			path = LiuChangCE04;
+			path = MemoryGame;
 			sourceTree = "<group>";
 		};
 		B07615961F8D593A00EECD35 /* View */ = {
@@ -86,12 +89,20 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		B076159C1F9131BB00EECD35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B076159D1F9131E000EECD35 /* Record.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B07615801F8D55B000EECD35 /* LiuChangCE04 */ = {
+		B07615801F8D55B000EECD35 /* MemoryGame */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B07615931F8D55B000EECD35 /* Build configuration list for PBXNativeTarget "LiuChangCE04" */;
+			buildConfigurationList = B07615931F8D55B000EECD35 /* Build configuration list for PBXNativeTarget "MemoryGame" */;
 			buildPhases = (
 				B076157D1F8D55B000EECD35 /* Sources */,
 				B076157E1F8D55B000EECD35 /* Frameworks */,
@@ -101,9 +112,9 @@
 			);
 			dependencies = (
 			);
-			name = LiuChangCE04;
+			name = MemoryGame;
 			productName = LiuChangCE04;
-			productReference = B07615811F8D55B000EECD35 /* LiuChangCE04.app */;
+			productReference = B07615811F8D55B000EECD35 /* MemoryGame.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -122,7 +133,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B076157C1F8D55B000EECD35 /* Build configuration list for PBXProject "LiuChangCE04" */;
+			buildConfigurationList = B076157C1F8D55B000EECD35 /* Build configuration list for PBXProject "MemoryGame" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -135,7 +146,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B07615801F8D55B000EECD35 /* LiuChangCE04 */,
+				B07615801F8D55B000EECD35 /* MemoryGame */,
 			);
 		};
 /* End PBXProject section */
@@ -160,6 +171,7 @@
 			files = (
 				B076159B1F8D64E600EECD35 /* GameViewController.swift in Sources */,
 				B07615871F8D55B000EECD35 /* ViewController.swift in Sources */,
+				B076159E1F9131E000EECD35 /* Record.swift in Sources */,
 				B07615981F8D595D00EECD35 /* CardButton.swift in Sources */,
 				B07615851F8D55B000EECD35 /* AppDelegate.swift in Sources */,
 			);
@@ -300,9 +312,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8M4S86FE42;
-				INFOPLIST_FILE = LiuChangCE04/Info.plist;
+				INFOPLIST_FILE = MemoryGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fullsail.LiuChangCE04;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fullsail.MemoryGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -315,9 +327,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8M4S86FE42;
-				INFOPLIST_FILE = LiuChangCE04/Info.plist;
+				INFOPLIST_FILE = MemoryGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fullsail.LiuChangCE04;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fullsail.MemoryGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -327,7 +339,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B076157C1F8D55B000EECD35 /* Build configuration list for PBXProject "LiuChangCE04" */ = {
+		B076157C1F8D55B000EECD35 /* Build configuration list for PBXProject "MemoryGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B07615911F8D55B000EECD35 /* Debug */,
@@ -336,7 +348,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B07615931F8D55B000EECD35 /* Build configuration list for PBXNativeTarget "LiuChangCE04" */ = {
+		B07615931F8D55B000EECD35 /* Build configuration list for PBXNativeTarget "MemoryGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B07615941F8D55B000EECD35 /* Debug */,
