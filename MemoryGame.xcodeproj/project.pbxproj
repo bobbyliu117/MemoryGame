@@ -15,6 +15,8 @@
 		B07615981F8D595D00EECD35 /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07615971F8D595D00EECD35 /* CardButton.swift */; };
 		B076159B1F8D64E600EECD35 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076159A1F8D64E600EECD35 /* GameViewController.swift */; };
 		B076159E1F9131E000EECD35 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076159D1F9131E000EECD35 /* Record.swift */; };
+		B07615F01F95990F00EECD35 /* RecordData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B07615EE1F95990F00EECD35 /* RecordData.xcdatamodeld */; };
+		B07615F41F95A4E500EECD35 /* CongratVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07615F31F95A4E500EECD35 /* CongratVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		B07615971F8D595D00EECD35 /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
 		B076159A1F8D64E600EECD35 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B076159D1F9131E000EECD35 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		B07615EF1F95990F00EECD35 /* RecordData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecordData.xcdatamodel; sourceTree = "<group>"; };
+		B07615F31F95A4E500EECD35 /* CongratVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 				B076158B1F8D55B000EECD35 /* Assets.xcassets */,
 				B076158D1F8D55B000EECD35 /* LaunchScreen.storyboard */,
 				B07615901F8D55B000EECD35 /* Info.plist */,
+				B07615EE1F95990F00EECD35 /* RecordData.xcdatamodeld */,
 			);
 			path = MemoryGame;
 			sourceTree = "<group>";
@@ -83,6 +88,7 @@
 		B07615991F8D64CB00EECD35 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B07615F31F95A4E500EECD35 /* CongratVC.swift */,
 				B07615861F8D55B000EECD35 /* ViewController.swift */,
 				B076159A1F8D64E600EECD35 /* GameViewController.swift */,
 			);
@@ -169,11 +175,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B07615F01F95990F00EECD35 /* RecordData.xcdatamodeld in Sources */,
 				B076159B1F8D64E600EECD35 /* GameViewController.swift in Sources */,
 				B07615871F8D55B000EECD35 /* ViewController.swift in Sources */,
 				B076159E1F9131E000EECD35 /* Record.swift in Sources */,
 				B07615981F8D595D00EECD35 /* CardButton.swift in Sources */,
 				B07615851F8D55B000EECD35 /* AppDelegate.swift in Sources */,
+				B07615F41F95A4E500EECD35 /* CongratVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +366,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B07615EE1F95990F00EECD35 /* RecordData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B07615EF1F95990F00EECD35 /* RecordData.xcdatamodel */,
+			);
+			currentVersion = B07615EF1F95990F00EECD35 /* RecordData.xcdatamodel */;
+			path = RecordData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B07615791F8D55B000EECD35 /* Project object */;
 }

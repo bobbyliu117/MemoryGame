@@ -1,8 +1,15 @@
 // Chang Liu
 
 import UIKit
+import CoreData
 
 class GameViewController: UIViewController {
+    
+    // MARK: Core Data Setup
+    
+    
+    
+    
     
     @IBOutlet weak var btnScreen: UIButton!
     @IBOutlet weak var btnStart: UIButton!
@@ -18,6 +25,8 @@ class GameViewController: UIViewController {
     // keep track the time
     var time = 0
     var timer = Timer()
+    // keep track moves
+    var moves = 0
     
     // methods to update time and time label display
     @objc func countUpTime() {
@@ -138,22 +147,34 @@ extension GameViewController: CardButtonDelegate {
         btnScreen.isHidden = true
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let sVC = segue.destination as? CongratVC {
+            sVC.displayInfo = "YOU WIN!\nTook \(moves) moves in \(time) seconds.\nPlease enter your name or initial:"
+        }
+    }
+    
     // 3rd required method
     func dismiss() {
+
+        performSegue(withIdentifier: "toCongratVC", sender: nil)
         
-        // setup alert
-        let alert = UIAlertController(title: "Congrat!", message: "YOU WIN! Took \(time) seconds.", preferredStyle: UIAlertControllerStyle.alert)
-        let okay = UIAlertAction(title: "Play Again", style: UIAlertActionStyle.default) { (_) in
-            // reset game
-            self.shuffle()
-        }
-        let quit = UIAlertAction(title: "Quit", style: UIAlertActionStyle.cancel) { (_) in
-            self.dismiss(animated: true, completion: nil)
-        }
-        alert.addAction(okay)
-        alert.addAction(quit)
-        
-        present(alert, animated: true, completion: nil)
+//        // setup alert
+//        let alert = UIAlertController(title: "Congrat!", message: "YOU WIN! Took \(time) seconds.", preferredStyle: UIAlertControllerStyle.alert)
+//
+//        // add textfield to get user input name
+//
+//
+//        let okay = UIAlertAction(title: "Play Again", style: UIAlertActionStyle.default) { (_) in
+//            // reset game
+//            self.shuffle()
+//        }
+//        let quit = UIAlertAction(title: "Quit", style: UIAlertActionStyle.cancel) { (_) in
+//            self.dismiss(animated: true, completion: nil)
+//        }
+//        alert.addAction(okay)
+//        alert.addAction(quit)
+//
+//        present(alert, animated: true, completion: nil)
         
         // reset
         timer.invalidate()
@@ -161,7 +182,14 @@ extension GameViewController: CardButtonDelegate {
         btnScreen.isHidden = false
         time = 0
         lblTimer.text = "Timer"
+        moves = 0
         
+    }
+    
+    // 4th required method: keep track of nuber of moves
+    func countMoves() {
+        moves += 1
+        print(moves)
     }
     
 }

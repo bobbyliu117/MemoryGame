@@ -10,6 +10,8 @@ protocol CardButtonDelegate {
     func screen()
     // dismiss
     func dismiss()
+    // to keep track of moves
+    func countMoves()
 }
 
 // card
@@ -43,6 +45,9 @@ class CardButton: UIButton {
     // game logic when card is tapped
     // flipped or not, is first flipped or not
     @objc func tap() {
+        // to keep track of this move
+        delegate.countMoves()
+        
         if isFlipped {
             isFlipped = false
             // flip back
