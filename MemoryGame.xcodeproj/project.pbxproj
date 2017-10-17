@@ -17,6 +17,8 @@
 		B076159E1F9131E000EECD35 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076159D1F9131E000EECD35 /* Record.swift */; };
 		B07615F01F95990F00EECD35 /* RecordData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B07615EE1F95990F00EECD35 /* RecordData.xcdatamodeld */; };
 		B07615F41F95A4E500EECD35 /* CongratVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07615F31F95A4E500EECD35 /* CongratVC.swift */; };
+		B0A287271F964BB9008DC3DD /* RankingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A287261F964BB9008DC3DD /* RankingVC.swift */; };
+		B0A287291F965C98008DC3DD /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A287281F965C98008DC3DD /* RecordCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		B076159D1F9131E000EECD35 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		B07615EF1F95990F00EECD35 /* RecordData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecordData.xcdatamodel; sourceTree = "<group>"; };
 		B07615F31F95A4E500EECD35 /* CongratVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratVC.swift; sourceTree = "<group>"; };
+		B0A287261F964BB9008DC3DD /* RankingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingVC.swift; sourceTree = "<group>"; };
+		B0A287281F965C98008DC3DD /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				B07615971F8D595D00EECD35 /* CardButton.swift */,
+				B0A287281F965C98008DC3DD /* RecordCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 				B07615F31F95A4E500EECD35 /* CongratVC.swift */,
 				B07615861F8D55B000EECD35 /* ViewController.swift */,
 				B076159A1F8D64E600EECD35 /* GameViewController.swift */,
+				B0A287261F964BB9008DC3DD /* RankingVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -179,7 +185,9 @@
 				B076159B1F8D64E600EECD35 /* GameViewController.swift in Sources */,
 				B07615871F8D55B000EECD35 /* ViewController.swift in Sources */,
 				B076159E1F9131E000EECD35 /* Record.swift in Sources */,
+				B0A287291F965C98008DC3DD /* RecordCell.swift in Sources */,
 				B07615981F8D595D00EECD35 /* CardButton.swift in Sources */,
+				B0A287271F964BB9008DC3DD /* RankingVC.swift in Sources */,
 				B07615851F8D55B000EECD35 /* AppDelegate.swift in Sources */,
 				B07615F41F95A4E500EECD35 /* CongratVC.swift in Sources */,
 			);

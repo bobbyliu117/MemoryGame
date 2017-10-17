@@ -6,11 +6,17 @@ import CoreData
 class GameViewController: UIViewController {
     
     // MARK: Core Data Setup
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    // get managed context to read/write data
+    private var managedContext: NSManagedObjectContext!
     
+    // create variables to hold data needed to create Record
+    var winDate: Date!
+    var winMoves: Int16!
+    var winTimes: Int16!
+    var winnerName: String!
     
-    
-    
-    
+    // UIs
     @IBOutlet weak var btnScreen: UIButton!
     @IBOutlet weak var btnStart: UIButton!
     @IBOutlet weak var lblTimer: UILabel!
@@ -31,7 +37,7 @@ class GameViewController: UIViewController {
     // methods to update time and time label display
     @objc func countUpTime() {
         time += 1
-        lblTimer.text = "\(time) seconds"
+        lblTimer.text = formatTime(time: Int16(time)) //"\(time) seconds"
     }
     // 5 second count down
     @objc func countDownTime() {
@@ -57,7 +63,7 @@ class GameViewController: UIViewController {
             return
         }
         // update time display
-        lblTimer.text = "\(time) seconds left"
+        lblTimer.text = "\(time) Seconds Left"
     }
 
     override func viewDidLoad() {
@@ -66,6 +72,8 @@ class GameViewController: UIViewController {
         // assign imageStrings according to device used
         imageStrings = totalPairs == 10 ? imageNames10 : imageNames15
         
+        // get Core Data Context
+        managedContext = appDelegate.managedObjectContext
     }
     
     // start game
@@ -93,6 +101,19 @@ class GameViewController: UIViewController {
     // quit game
     @IBAction func dismiss(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    // format time output
+    func formatTime(time: Int16) -> String {
+        if time < 60 {
+            return time.description + "\""
+        } else if time < 3600 {
+            let min = time / 60
+            let sec = time % 60
+            return "\(min)'\(sec)\""
+        } else {
+            return "Man...no way to take more than an hour"
+        }
     }
     
 }
@@ -149,32 +170,20 @@ extension GameViewController: CardButtonDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let sVC = segue.destination as? CongratVC {
-            sVC.displayInfo = "YOU WIN!\nTook \(moves) moves in \(time) seconds.\nPlease enter your name or initial:"
+            sVC.displayInfo = "YOU WIN!\nTook \(moves) moves in \(formatTime(time: Int16(time))).\nPlease enter your name or initial:"
         }
     }
     
     // 3rd required method
     func dismiss() {
+        // keep track winning record data
+        // TODO: Take local time difference into account
+        winDate = Date()
+        // Int16_MAX = 32767, should be enough in this case
+        winMoves = Int16(moves)
+        winTimes = Int16(time)
 
         performSegue(withIdentifier: "toCongratVC", sender: nil)
-        
-//        // setup alert
-//        let alert = UIAlertController(title: "Congrat!", message: "YOU WIN! Took \(time) seconds.", preferredStyle: UIAlertControllerStyle.alert)
-//
-//        // add textfield to get user input name
-//
-//
-//        let okay = UIAlertAction(title: "Play Again", style: UIAlertActionStyle.default) { (_) in
-//            // reset game
-//            self.shuffle()
-//        }
-//        let quit = UIAlertAction(title: "Quit", style: UIAlertActionStyle.cancel) { (_) in
-//            self.dismiss(animated: true, completion: nil)
-//        }
-//        alert.addAction(okay)
-//        alert.addAction(quit)
-//
-//        present(alert, animated: true, completion: nil)
         
         // reset
         timer.invalidate()
@@ -184,6 +193,26 @@ extension GameViewController: CardButtonDelegate {
         lblTimer.text = "Timer"
         moves = 0
         
+    }
+    
+    // if the user click OK to store the record, unwind here
+    @IBAction func saveRecord(_ segue: UIStoryboardSegue) {
+        if let sVC = segue.source as? CongratVC {
+            // get new record
+            let newRecord = Record(context: managedContext)
+            // assign values to each attribute
+            newRecord.date = winDate
+            newRecord.moveCount = winMoves
+            newRecord.time = winTimes
+            newRecord.name = sVC.userInput
+            
+            // save new record
+            do {
+                try managedContext.save()
+            } catch {
+                print("Save New Record Failed 001")
+            }
+        }
     }
     
     // 4th required method: keep track of nuber of moves
