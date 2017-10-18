@@ -14,7 +14,6 @@
 		B076158F1F8D55B000EECD35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B076158D1F8D55B000EECD35 /* LaunchScreen.storyboard */; };
 		B07615981F8D595D00EECD35 /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07615971F8D595D00EECD35 /* CardButton.swift */; };
 		B076159B1F8D64E600EECD35 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076159A1F8D64E600EECD35 /* GameViewController.swift */; };
-		B076159E1F9131E000EECD35 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076159D1F9131E000EECD35 /* Record.swift */; };
 		B07615F01F95990F00EECD35 /* RecordData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B07615EE1F95990F00EECD35 /* RecordData.xcdatamodeld */; };
 		B07615F41F95A4E500EECD35 /* CongratVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07615F31F95A4E500EECD35 /* CongratVC.swift */; };
 		B0A287271F964BB9008DC3DD /* RankingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A287261F964BB9008DC3DD /* RankingVC.swift */; };
@@ -31,7 +30,6 @@
 		B07615901F8D55B000EECD35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B07615971F8D595D00EECD35 /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
 		B076159A1F8D64E600EECD35 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		B076159D1F9131E000EECD35 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		B07615EF1F95990F00EECD35 /* RecordData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecordData.xcdatamodel; sourceTree = "<group>"; };
 		B07615F31F95A4E500EECD35 /* CongratVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratVC.swift; sourceTree = "<group>"; };
 		B0A287261F964BB9008DC3DD /* RankingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingVC.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 		B076159C1F9131BB00EECD35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B076159D1F9131E000EECD35 /* Record.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,7 +181,6 @@
 				B07615F01F95990F00EECD35 /* RecordData.xcdatamodeld in Sources */,
 				B076159B1F8D64E600EECD35 /* GameViewController.swift in Sources */,
 				B07615871F8D55B000EECD35 /* ViewController.swift in Sources */,
-				B076159E1F9131E000EECD35 /* Record.swift in Sources */,
 				B0A287291F965C98008DC3DD /* RecordCell.swift in Sources */,
 				B07615981F8D595D00EECD35 /* CardButton.swift in Sources */,
 				B0A287271F964BB9008DC3DD /* RankingVC.swift in Sources */,

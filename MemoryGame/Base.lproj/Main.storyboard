@@ -785,7 +785,7 @@
                                 <rect key="frame" x="62" y="157.33333333333337" width="290" height="441.33333333333326"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRz-KD-TkR">
-                                        <rect key="frame" x="147.66666666666663" y="392.33333333333326" width="137.33333333333337" height="44"/>
+                                        <rect key="frame" x="147.66666666666663" y="397.33333333333326" width="142.33333333333337" height="44"/>
                                         <color key="backgroundColor" red="1" green="0.40500047839999997" blue="0.2709100391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="Cancel">
@@ -796,7 +796,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vM6-QR-eg1">
-                                        <rect key="frame" x="5" y="392.33333333333326" width="137.66666666666666" height="44"/>
+                                        <rect key="frame" x="0.0" y="397.33333333333326" width="142.66666666666666" height="44"/>
                                         <color key="backgroundColor" red="1" green="0.40500047839999997" blue="0.2709100391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="Okay">
@@ -811,6 +811,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Mma-hf-kF0" id="EzW-mD-Ed9"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aU-dF-SIK">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="53"/>
@@ -824,22 +827,22 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="5Iq-fg-fOg" firstAttribute="width" secondItem="Cj3-Qa-qwR" secondAttribute="width" multiplier="0.7" id="FaF-vy-RJM"/>
-                                    <constraint firstAttribute="bottom" secondItem="hRz-KD-TkR" secondAttribute="bottom" constant="5" id="M5u-XL-szc"/>
+                                    <constraint firstAttribute="bottom" secondItem="hRz-KD-TkR" secondAttribute="bottom" id="M5u-XL-szc"/>
                                     <constraint firstItem="hRz-KD-TkR" firstAttribute="width" secondItem="vM6-QR-eg1" secondAttribute="width" id="N0B-cn-2Dr"/>
                                     <constraint firstItem="hRz-KD-TkR" firstAttribute="leading" secondItem="vM6-QR-eg1" secondAttribute="trailing" constant="5" id="PRN-7y-g9i"/>
                                     <constraint firstItem="5aU-dF-SIK" firstAttribute="top" secondItem="Cj3-Qa-qwR" secondAttribute="top" id="WRo-x1-XHd"/>
                                     <constraint firstAttribute="trailing" secondItem="5aU-dF-SIK" secondAttribute="trailing" id="YXS-3j-8fd"/>
                                     <constraint firstItem="5Iq-fg-fOg" firstAttribute="centerX" secondItem="Cj3-Qa-qwR" secondAttribute="centerX" id="ced-Pi-IVj"/>
-                                    <constraint firstAttribute="trailing" secondItem="hRz-KD-TkR" secondAttribute="trailing" constant="5" id="lgL-ox-0cF"/>
+                                    <constraint firstAttribute="trailing" secondItem="hRz-KD-TkR" secondAttribute="trailing" id="lgL-ox-0cF"/>
                                     <constraint firstItem="5aU-dF-SIK" firstAttribute="leading" secondItem="Cj3-Qa-qwR" secondAttribute="leading" id="pmK-RO-nau"/>
                                     <constraint firstItem="hRz-KD-TkR" firstAttribute="height" secondItem="vM6-QR-eg1" secondAttribute="height" id="saW-GE-dgJ"/>
                                     <constraint firstItem="vM6-QR-eg1" firstAttribute="height" secondItem="Cj3-Qa-qwR" secondAttribute="height" multiplier="0.1" id="tvf-pq-x8O"/>
-                                    <constraint firstAttribute="bottom" secondItem="vM6-QR-eg1" secondAttribute="bottom" constant="5" id="uak-Tt-110"/>
-                                    <constraint firstItem="vM6-QR-eg1" firstAttribute="leading" secondItem="Cj3-Qa-qwR" secondAttribute="leading" constant="5" id="x7M-l0-cwv"/>
+                                    <constraint firstAttribute="bottom" secondItem="vM6-QR-eg1" secondAttribute="bottom" id="uak-Tt-110"/>
+                                    <constraint firstItem="vM6-QR-eg1" firstAttribute="leading" secondItem="Cj3-Qa-qwR" secondAttribute="leading" id="x7M-l0-cwv"/>
                                     <constraint firstItem="5aU-dF-SIK" firstAttribute="height" secondItem="Cj3-Qa-qwR" secondAttribute="height" multiplier="0.12" id="zOr-Tp-KDc"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzi-eR-qCR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzi-eR-qCR">
                                 <rect key="frame" x="62" y="241.33333333333331" width="290" height="23.999999999999943"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>

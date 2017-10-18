@@ -2,7 +2,7 @@
 
 import UIKit
 
-class CongratVC: UIViewController {
+class CongratVC: UIViewController, UITextFieldDelegate {
     
     // stored property
     // to get display information from game result
@@ -18,6 +18,7 @@ class CongratVC: UIViewController {
 
         // display result
         lblResult.text = displayInfo
+        
     }
     
     // check if the user input is empty
@@ -26,6 +27,17 @@ class CongratVC: UIViewController {
             // assign a default name if it is empty
             userInput = txfNameInput.text!.isEmpty ? "Someone" : txfNameInput.text!
         }
+        return true
+    }
+    
+    // Dismiss keyboard when touch view
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    // dismiss keyboard when return textfield
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         return true
     }
 
