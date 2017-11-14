@@ -6,21 +6,27 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ChalkboardSE.ttc">
+            <string>ChalkboardSE-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LiuChangCE04" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemoryGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xV7-Hh-tl2">
-                                <rect key="frame" x="103.66666666666669" y="587" width="207" height="59"/>
+                                <rect key="frame" x="103.66666666666669" y="497" width="207" height="59"/>
                                 <color key="backgroundColor" red="1" green="0.40500047839999997" blue="0.2709100391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Play">
@@ -30,13 +36,28 @@
                                     <segue destination="2sT-OP-lLG" kind="show" id="dT5-4f-do6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPk-fC-qaL">
+                                <rect key="frame" x="103.66666666666669" y="571" width="207" height="59"/>
+                                <color key="backgroundColor" red="1" green="0.40500047839999997" blue="0.2709100391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Ranking">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="5Ic-IB-iig" kind="show" id="FZn-Bv-D59"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xV7-Hh-tl2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BLc-qC-c83"/>
+                            <constraint firstItem="NPk-fC-qaL" firstAttribute="height" secondItem="xV7-Hh-tl2" secondAttribute="height" id="HE2-Kv-BRF"/>
                             <constraint firstItem="xV7-Hh-tl2" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.08" id="I2H-Cw-bxG"/>
                             <constraint firstItem="xV7-Hh-tl2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="UhI-Cn-ULF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xV7-Hh-tl2" secondAttribute="bottom" constant="90" id="YS0-e1-8dr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xV7-Hh-tl2" secondAttribute="bottom" constant="180" id="YS0-e1-8dr"/>
+                            <constraint firstItem="NPk-fC-qaL" firstAttribute="top" secondItem="xV7-Hh-tl2" secondAttribute="bottom" constant="15" id="b9C-w8-hCv"/>
+                            <constraint firstItem="NPk-fC-qaL" firstAttribute="centerX" secondItem="xV7-Hh-tl2" secondAttribute="centerX" id="bLq-WU-DTN"/>
+                            <constraint firstItem="NPk-fC-qaL" firstAttribute="width" secondItem="xV7-Hh-tl2" secondAttribute="width" id="odO-i2-yfV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -45,10 +66,157 @@
             </objects>
             <point key="canvasLocation" x="30" y="117"/>
         </scene>
+        <!--RankingVC-->
+        <scene sceneID="OKP-Bv-jnx">
+            <objects>
+                <viewController id="5Ic-IB-iig" customClass="RankingVC" customModule="MemoryGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tcO-WC-r0m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HX5-Us-c6Q" userLabel="RankingHeaderView">
+                                <rect key="frame" x="0.0" y="20.000000000000007" width="414" height="95.666666666666686"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ranking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CjI-ej-cU5">
+                                        <rect key="frame" x="155" y="30" width="105" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ih6-iP-xw9" userLabel="Back">
+                                        <rect key="frame" x="8" y="26" width="75" height="42"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <state key="normal" title="&lt;Back">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dismiss:" destination="5Ic-IB-iig" eventType="touchUpInside" id="TwP-Hk-OzR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.40500047839999997" blue="0.2709100391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Ih6-iP-xw9" firstAttribute="leading" secondItem="HX5-Us-c6Q" secondAttribute="leading" constant="8" id="7WF-eh-quW"/>
+                                    <constraint firstItem="Ih6-iP-xw9" firstAttribute="centerY" secondItem="HX5-Us-c6Q" secondAttribute="centerY" id="Mvd-Ts-TIM"/>
+                                    <constraint firstItem="CjI-ej-cU5" firstAttribute="centerY" secondItem="HX5-Us-c6Q" secondAttribute="centerY" id="vHu-lG-e9f"/>
+                                    <constraint firstItem="CjI-ej-cU5" firstAttribute="centerX" secondItem="HX5-Us-c6Q" secondAttribute="centerX" id="xcg-MO-TRi"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S85-7G-i58">
+                                <rect key="frame" x="0.0" y="115.66666666666669" width="414" height="620.33333333333326"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recordCell" rowHeight="100" id="ahS-g1-1Kl" customClass="RecordCell" customModule="MemoryGame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ahS-g1-1Kl" id="bhP-mn-Wxr">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="99.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZyB-8n-bt4">
+                                                    <rect key="frame" x="10" y="10" width="35" height="79"/>
+                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="55"/>
+                                                    <color key="textColor" red="1" green="0.40500047839999997" blue="0.2709100391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" red="0.63859049479999996" green="0.2499983083" blue="0.14300747829999999" alpha="0.69849636130136983" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <size key="shadowOffset" width="1" height="1"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="tY7-A6-amS">
+                                                    <rect key="frame" x="54.999999999999993" y="18" width="63.333333333333321" height="63"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="tY7-A6-amS" secondAttribute="height" multiplier="1:1" id="qAe-m5-Sav"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLy-PI-oSO">
+                                                    <rect key="frame" x="131.33333333333334" y="13" width="40.333333333333314" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meV-FS-BEA">
+                                                    <rect key="frame" x="131.33333333333334" y="40.666666666666664" width="32.333333333333314" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9c-Bi-8vl">
+                                                    <rect key="frame" x="333.66666666666674" y="53" width="74.333333333333314" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                                    <color key="textColor" red="0.63859049479999996" green="0.2499983083" blue="0.14300747829999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPo-Vj-jVF">
+                                                    <rect key="frame" x="365" y="10" width="43" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1C-KK-QqM">
+                                                    <rect key="frame" x="131.33333333333334" y="68" width="45" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tLy-PI-oSO" firstAttribute="leading" secondItem="meV-FS-BEA" secondAttribute="leading" id="1yE-x4-aW1"/>
+                                                <constraint firstItem="meV-FS-BEA" firstAttribute="top" secondItem="tLy-PI-oSO" secondAttribute="bottom" constant="9.6666666666666643" id="4kh-ur-Dxh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ZyB-8n-bt4" secondAttribute="bottom" constant="2" id="93Q-R9-M8R"/>
+                                                <constraint firstItem="j1C-KK-QqM" firstAttribute="top" secondItem="meV-FS-BEA" secondAttribute="bottom" constant="9.3333333333333357" id="ATu-XS-a1O"/>
+                                                <constraint firstItem="meV-FS-BEA" firstAttribute="centerY" secondItem="tY7-A6-amS" secondAttribute="centerY" id="DOc-2g-khY"/>
+                                                <constraint firstItem="j1C-KK-QqM" firstAttribute="leading" secondItem="meV-FS-BEA" secondAttribute="leading" id="EsD-eV-ooA"/>
+                                                <constraint firstItem="tY7-A6-amS" firstAttribute="centerY" secondItem="ZyB-8n-bt4" secondAttribute="centerY" id="Nd4-ez-zxf"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="N9c-Bi-8vl" secondAttribute="bottom" constant="2" id="S6j-00-n63"/>
+                                                <constraint firstItem="tY7-A6-amS" firstAttribute="height" secondItem="ZyB-8n-bt4" secondAttribute="height" multiplier="0.8" id="Umy-4S-goY"/>
+                                                <constraint firstItem="tY7-A6-amS" firstAttribute="leading" secondItem="ZyB-8n-bt4" secondAttribute="trailing" constant="10" id="Y4B-El-qve"/>
+                                                <constraint firstItem="N9c-Bi-8vl" firstAttribute="trailing" secondItem="bhP-mn-Wxr" secondAttribute="trailingMargin" constant="2" id="a4C-66-UFC"/>
+                                                <constraint firstItem="pPo-Vj-jVF" firstAttribute="trailing" secondItem="bhP-mn-Wxr" secondAttribute="trailingMargin" constant="2" id="cAl-8R-HJF"/>
+                                                <constraint firstItem="pPo-Vj-jVF" firstAttribute="top" secondItem="bhP-mn-Wxr" secondAttribute="topMargin" constant="2" id="iLi-eZ-zus"/>
+                                                <constraint firstItem="ZyB-8n-bt4" firstAttribute="top" secondItem="bhP-mn-Wxr" secondAttribute="topMargin" constant="2" id="lFc-ck-pii"/>
+                                                <constraint firstItem="ZyB-8n-bt4" firstAttribute="leading" secondItem="bhP-mn-Wxr" secondAttribute="leadingMargin" constant="2" id="odM-Lo-uK6"/>
+                                                <constraint firstItem="meV-FS-BEA" firstAttribute="leading" secondItem="tY7-A6-amS" secondAttribute="trailing" constant="13" id="tuy-ii-dg5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblDate" destination="meV-FS-BEA" id="BeQ-fO-nuJ"/>
+                                            <outlet property="lblMoves" destination="j1C-KK-QqM" id="ckV-bH-dml"/>
+                                            <outlet property="lblName" destination="tLy-PI-oSO" id="jlV-o9-7m4"/>
+                                            <outlet property="lblRank" destination="ZyB-8n-bt4" id="5v3-Tc-I80"/>
+                                            <outlet property="lblTime" destination="N9c-Bi-8vl" id="BEc-qb-mpe"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="5Ic-IB-iig" id="WJl-dV-nYI"/>
+                                    <outlet property="delegate" destination="5Ic-IB-iig" id="ui9-1R-nW7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="S85-7G-i58" firstAttribute="leading" secondItem="IwU-Ou-43Y" secondAttribute="leading" id="6UB-MI-VIP"/>
+                            <constraint firstItem="S85-7G-i58" firstAttribute="trailing" secondItem="IwU-Ou-43Y" secondAttribute="trailing" id="LC9-Zg-0Fx"/>
+                            <constraint firstItem="S85-7G-i58" firstAttribute="top" secondItem="HX5-Us-c6Q" secondAttribute="bottom" id="T1y-YY-3Qm"/>
+                            <constraint firstItem="HX5-Us-c6Q" firstAttribute="top" secondItem="IwU-Ou-43Y" secondAttribute="top" id="WeO-Wi-C7I"/>
+                            <constraint firstItem="HX5-Us-c6Q" firstAttribute="leading" secondItem="IwU-Ou-43Y" secondAttribute="leading" id="XlC-lI-zeL"/>
+                            <constraint firstItem="HX5-Us-c6Q" firstAttribute="trailing" secondItem="IwU-Ou-43Y" secondAttribute="trailing" id="cWa-Oq-vU2"/>
+                            <constraint firstItem="S85-7G-i58" firstAttribute="bottom" secondItem="IwU-Ou-43Y" secondAttribute="bottom" id="j5p-Es-XV8"/>
+                            <constraint firstItem="HX5-Us-c6Q" firstAttribute="height" secondItem="tcO-WC-r0m" secondAttribute="height" multiplier="0.13" id="pWP-7y-7Tx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IwU-Ou-43Y"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="S85-7G-i58" id="fov-FG-zoc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bUZ-UC-Fe7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="742.02898550724649" y="832.33695652173924"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="eEL-Xm-ZJx">
             <objects>
-                <viewController id="2sT-OP-lLG" customClass="GameViewController" customModule="LiuChangCE04" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2sT-OP-lLG" customClass="GameViewController" customModule="MemoryGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LDE-N7-rq7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,7 +231,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nID-Ar-GbG" userLabel="10_CenterButton" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nID-Ar-GbG" userLabel="10_CenterButton" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="127" y="320.66666666666669" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nID-Ar-GbG" secondAttribute="height" multiplier="1:1" id="CDT-rR-oP0"/>
@@ -74,119 +242,119 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFe-1z-g5L" userLabel="1" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFe-1z-g5L" userLabel="1" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="42" y="150.66666666666666" width="75" height="75"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhw-rQ-Ys0" userLabel="2" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhw-rQ-Ys0" userLabel="2" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="127" y="150.66666666666666" width="75" height="75"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf1-QL-Mdn" userLabel="3" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf1-QL-Mdn" userLabel="3" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="212" y="150.66666666666666" width="75" height="75"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBj-o9-C3v" userLabel="4" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBj-o9-C3v" userLabel="4" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="297" y="150.66666666666666" width="75" height="75"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RsM-X6-nI1" userLabel="pad1" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RsM-X6-nI1" userLabel="pad1" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="627" y="114" width="100" height="100"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Et-5T-C2U" userLabel="pad2" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Et-5T-C2U" userLabel="pad2" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="627" y="224" width="100" height="100"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qj1-kW-ZEw" userLabel="pad3" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qj1-kW-ZEw" userLabel="pad3" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="627" y="334" width="100" height="100"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCc-AZ-F0W" userLabel="pad4" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCc-AZ-F0W" userLabel="pad4" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="627" y="444" width="100" height="100"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdI-ne-UJB" userLabel="pad5" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdI-ne-UJB" userLabel="pad5" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="627" y="554" width="100" height="100"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2V-6m-STS" userLabel="5" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2V-6m-STS" userLabel="5" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="42" y="235.66666666666669" width="75" height="75.000000000000057"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRN-JQ-Xm4" userLabel="pad6" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRN-JQ-Xm4" userLabel="pad6" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="735" y="114" width="100" height="100"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ary-lW-70E" userLabel="pad7" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ary-lW-70E" userLabel="pad7" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="735" y="224" width="100" height="100"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqo-kC-TRY" userLabel="pad8" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqo-kC-TRY" userLabel="pad8" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="735" y="334" width="100" height="100"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSd-SQ-JpP" userLabel="pad9" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSd-SQ-JpP" userLabel="pad9" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="735" y="444" width="100" height="100"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntJ-CE-1KI" userLabel="pad10" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntJ-CE-1KI" userLabel="pad10" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="735" y="554" width="100" height="100"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg9-YV-RVD" userLabel="6" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg9-YV-RVD" userLabel="6" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="127" y="235.66666666666669" width="75" height="75.000000000000057"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRS-l4-OmF" userLabel="7" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRS-l4-OmF" userLabel="7" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="212" y="235.66666666666669" width="75" height="75.000000000000057"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppQ-4G-VEq" userLabel="8" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppQ-4G-VEq" userLabel="8" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="297" y="235.66666666666669" width="75" height="75.000000000000057"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmP-W0-r6J" userLabel="9" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmP-W0-r6J" userLabel="9" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="42" y="320.66666666666669" width="75" height="75"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7l-Qb-gLh" userLabel="11" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7l-Qb-gLh" userLabel="11" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="212" y="320.66666666666669" width="75" height="75"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIE-5b-agh" userLabel="12" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIE-5b-agh" userLabel="12" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="297" y="320.66666666666669" width="75" height="75"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebs-V9-Ra3" userLabel="13" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebs-V9-Ra3" userLabel="13" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="42" y="405.66666666666669" width="75" height="75"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0O-m9-Z0L" userLabel="14" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0O-m9-Z0L" userLabel="14" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="127" y="405.66666666666669" width="75" height="75"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsj-aX-Xoc" userLabel="15" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsj-aX-Xoc" userLabel="15" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="212" y="405.66666666666669" width="75" height="75"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIG-7m-GU8" userLabel="16" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIG-7m-GU8" userLabel="16" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="297" y="405.66666666666669" width="75" height="75"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LX2-Ch-cO0" userLabel="17" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LX2-Ch-cO0" userLabel="17" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="42" y="490.66666666666663" width="75" height="74.999999999999886"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAU-Cf-oAt" userLabel="18" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAU-Cf-oAt" userLabel="18" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="127" y="490.66666666666663" width="75" height="74.999999999999886"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="962-tv-1iV" userLabel="19" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="962-tv-1iV" userLabel="19" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="212" y="490.66666666666663" width="75" height="74.999999999999886"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfV-Kq-pcT" userLabel="20" customClass="CardButton" customModule="LiuChangCE04" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfV-Kq-pcT" userLabel="20" customClass="CardButton" customModule="MemoryGame" customModuleProvider="target">
                                 <rect key="frame" x="297" y="490.66666666666663" width="75" height="74.999999999999886"/>
                                 <state key="normal" title="Button" image="card_back"/>
                             </button>
@@ -598,14 +766,115 @@
                         <outletCollection property="cardButtons" destination="Nqo-kC-TRY" collectionClass="NSMutableArray" id="IRR-xl-rQu"/>
                         <outletCollection property="cardButtons" destination="eSd-SQ-JpP" collectionClass="NSMutableArray" id="Qen-Ub-caI"/>
                         <outletCollection property="cardButtons" destination="ntJ-CE-1KI" collectionClass="NSMutableArray" id="ll4-dL-sfA"/>
+                        <segue destination="Mma-hf-kF0" kind="presentation" identifier="toCongratVC" modalPresentationStyle="overCurrentContext" id="NoL-Ht-5WV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nUK-sh-xfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="744.53125" y="115.42968749999999"/>
         </scene>
+        <!--CongratVC-->
+        <scene sceneID="nZ8-JJ-L1t">
+            <objects>
+                <viewController id="Mma-hf-kF0" customClass="CongratVC" customModule="MemoryGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LZa-Io-3hx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cj3-Qa-qwR" userLabel="PopupView">
+                                <rect key="frame" x="62" y="157.33333333333337" width="290" height="441.33333333333326"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRz-KD-TkR">
+                                        <rect key="frame" x="147.66666666666663" y="397.33333333333326" width="142.33333333333337" height="44"/>
+                                        <color key="backgroundColor" red="1" green="0.40500047839999997" blue="0.2709100391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dismiss:" destination="Mma-hf-kF0" eventType="touchUpInside" id="7O3-ZV-rTF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vM6-QR-eg1">
+                                        <rect key="frame" x="0.0" y="397.33333333333326" width="142.66666666666666" height="44"/>
+                                        <color key="backgroundColor" red="1" green="0.40500047839999997" blue="0.2709100391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="Okay">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="FHb-5C-KwG" kind="unwind" identifier="unwindToGame" unwindAction="saveRecord:" id="XDl-jX-jtb"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="5Iq-fg-fOg" userLabel="txfNameInput">
+                                        <rect key="frame" x="44.333333333333314" y="144.66666666666666" width="202.33333333333337" height="38"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Mma-hf-kF0" id="EzW-mD-Ed9"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aU-dF-SIK">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="53"/>
+                                        <color key="backgroundColor" red="1" green="0.40500047839999997" blue="0.2709100391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.63859049479166663" green="0.24999830826111108" blue="0.1430074783361111" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="5Iq-fg-fOg" firstAttribute="width" secondItem="Cj3-Qa-qwR" secondAttribute="width" multiplier="0.7" id="FaF-vy-RJM"/>
+                                    <constraint firstAttribute="bottom" secondItem="hRz-KD-TkR" secondAttribute="bottom" id="M5u-XL-szc"/>
+                                    <constraint firstItem="hRz-KD-TkR" firstAttribute="width" secondItem="vM6-QR-eg1" secondAttribute="width" id="N0B-cn-2Dr"/>
+                                    <constraint firstItem="hRz-KD-TkR" firstAttribute="leading" secondItem="vM6-QR-eg1" secondAttribute="trailing" constant="5" id="PRN-7y-g9i"/>
+                                    <constraint firstItem="5aU-dF-SIK" firstAttribute="top" secondItem="Cj3-Qa-qwR" secondAttribute="top" id="WRo-x1-XHd"/>
+                                    <constraint firstAttribute="trailing" secondItem="5aU-dF-SIK" secondAttribute="trailing" id="YXS-3j-8fd"/>
+                                    <constraint firstItem="5Iq-fg-fOg" firstAttribute="centerX" secondItem="Cj3-Qa-qwR" secondAttribute="centerX" id="ced-Pi-IVj"/>
+                                    <constraint firstAttribute="trailing" secondItem="hRz-KD-TkR" secondAttribute="trailing" id="lgL-ox-0cF"/>
+                                    <constraint firstItem="5aU-dF-SIK" firstAttribute="leading" secondItem="Cj3-Qa-qwR" secondAttribute="leading" id="pmK-RO-nau"/>
+                                    <constraint firstItem="hRz-KD-TkR" firstAttribute="height" secondItem="vM6-QR-eg1" secondAttribute="height" id="saW-GE-dgJ"/>
+                                    <constraint firstItem="vM6-QR-eg1" firstAttribute="height" secondItem="Cj3-Qa-qwR" secondAttribute="height" multiplier="0.1" id="tvf-pq-x8O"/>
+                                    <constraint firstAttribute="bottom" secondItem="vM6-QR-eg1" secondAttribute="bottom" id="uak-Tt-110"/>
+                                    <constraint firstItem="vM6-QR-eg1" firstAttribute="leading" secondItem="Cj3-Qa-qwR" secondAttribute="leading" id="x7M-l0-cwv"/>
+                                    <constraint firstItem="5aU-dF-SIK" firstAttribute="height" secondItem="Cj3-Qa-qwR" secondAttribute="height" multiplier="0.12" id="zOr-Tp-KDc"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzi-eR-qCR">
+                                <rect key="frame" x="62" y="241.33333333333331" width="290" height="23.999999999999943"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.89525363869863017" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5Iq-fg-fOg" firstAttribute="top" secondItem="kzi-eR-qCR" secondAttribute="bottom" multiplier="1.1" constant="10" id="0E5-ox-f8p"/>
+                            <constraint firstItem="kzi-eR-qCR" firstAttribute="leading" secondItem="Cj3-Qa-qwR" secondAttribute="leading" id="5y3-qq-gT9"/>
+                            <constraint firstItem="Cj3-Qa-qwR" firstAttribute="centerX" secondItem="tqx-hd-vax" secondAttribute="centerX" id="7U2-Zx-leq"/>
+                            <constraint firstItem="Cj3-Qa-qwR" firstAttribute="height" secondItem="LZa-Io-3hx" secondAttribute="height" multiplier="0.6" id="bEI-Ch-luH"/>
+                            <constraint firstItem="Cj3-Qa-qwR" firstAttribute="centerY" secondItem="tqx-hd-vax" secondAttribute="centerY" id="cD8-JK-L6p"/>
+                            <constraint firstItem="Cj3-Qa-qwR" firstAttribute="width" secondItem="LZa-Io-3hx" secondAttribute="width" multiplier="0.7" id="q8O-Vl-aab"/>
+                            <constraint firstItem="kzi-eR-qCR" firstAttribute="trailing" secondItem="Cj3-Qa-qwR" secondAttribute="trailing" id="rQj-8y-Ln4"/>
+                            <constraint firstItem="kzi-eR-qCR" firstAttribute="top" secondItem="5aU-dF-SIK" secondAttribute="bottom" multiplier="1.1" constant="10" id="sDl-Ma-HNQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tqx-hd-vax"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblResult" destination="kzi-eR-qCR" id="Yvg-xg-6aN"/>
+                        <outlet property="txfNameInput" destination="5Iq-fg-fOg" id="lUi-EU-1Cj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sfd-El-qT3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FHb-5C-KwG" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1462.3188405797102" y="109.23913043478262"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="avatar" width="120" height="120"/>
         <image name="card_back" width="128" height="128"/>
     </resources>
 </document>
