@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B004AC241FBB5157004BC256 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B004AC231FBB5157004BC256 /* Notes.swift */; };
+		B004AC291FBB626D004BC256 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B004AC281FBB626D004BC256 /* StoreKit.framework */; };
+		B004AC2B1FBB6283004BC256 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B004AC2A1FBB6283004BC256 /* GameKit.framework */; };
 		B07615851F8D55B000EECD35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07615841F8D55B000EECD35 /* AppDelegate.swift */; };
 		B07615871F8D55B000EECD35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07615861F8D55B000EECD35 /* ViewController.swift */; };
 		B076158A1F8D55B000EECD35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07615881F8D55B000EECD35 /* Main.storyboard */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B004AC231FBB5157004BC256 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		B004AC281FBB626D004BC256 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		B004AC2A1FBB6283004BC256 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		B07615811F8D55B000EECD35 /* MemoryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B07615841F8D55B000EECD35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B07615861F8D55B000EECD35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,17 +47,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B004AC291FBB626D004BC256 /* StoreKit.framework in Frameworks */,
+				B004AC2B1FBB6283004BC256 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B004AC251FBB6264004BC256 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B004AC2A1FBB6283004BC256 /* GameKit.framework */,
+				B004AC281FBB626D004BC256 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B07615781F8D55B000EECD35 = {
 			isa = PBXGroup;
 			children = (
 				B07615831F8D55B000EECD35 /* MemoryGame */,
 				B07615821F8D55B000EECD35 /* Products */,
+				B004AC251FBB6264004BC256 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +93,7 @@
 				B076158D1F8D55B000EECD35 /* LaunchScreen.storyboard */,
 				B07615901F8D55B000EECD35 /* Info.plist */,
 				B07615EE1F95990F00EECD35 /* RecordData.xcdatamodeld */,
+				B004AC231FBB5157004BC256 /* Notes.swift */,
 			);
 			path = MemoryGame;
 			sourceTree = "<group>";
@@ -139,6 +158,14 @@
 					B07615801F8D55B000EECD35 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -183,6 +210,7 @@
 				B07615871F8D55B000EECD35 /* ViewController.swift in Sources */,
 				B0A287291F965C98008DC3DD /* RecordCell.swift in Sources */,
 				B07615981F8D595D00EECD35 /* CardButton.swift in Sources */,
+				B004AC241FBB5157004BC256 /* Notes.swift in Sources */,
 				B0A287271F964BB9008DC3DD /* RankingVC.swift in Sources */,
 				B07615851F8D55B000EECD35 /* AppDelegate.swift in Sources */,
 				B07615F41F95A4E500EECD35 /* CongratVC.swift in Sources */,
@@ -326,7 +354,7 @@
 				DEVELOPMENT_TEAM = 8M4S86FE42;
 				INFOPLIST_FILE = MemoryGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fullsail.MemoryGame;
+				PRODUCT_BUNDLE_IDENTIFIER = club.bobbychangliu.MemoryGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -341,7 +369,7 @@
 				DEVELOPMENT_TEAM = 8M4S86FE42;
 				INFOPLIST_FILE = MemoryGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fullsail.MemoryGame;
+				PRODUCT_BUNDLE_IDENTIFIER = club.bobbychangliu.MemoryGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
